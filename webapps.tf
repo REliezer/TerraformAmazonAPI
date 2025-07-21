@@ -20,6 +20,8 @@ resource "azurerm_linux_web_app" "webappapi" {
         application_stack {
             docker_registry_url = "https://acramazonproductsdev.azurecr.io"
             docker_image_name = "amazonapi:latest"
+            docker_registry_username = var.acr_username
+            docker_registry_password = var.acr_password
         }
     }
 

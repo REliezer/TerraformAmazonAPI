@@ -51,3 +51,30 @@ variable "sql_driver" {
     description = "ODBC driver for SQL Server"
 }
 
+variable "acr_username" {
+    type = string
+    description = "Username for Azure Container Registry (ACR)"
+}
+
+variable "acr_password" {
+    type = string
+    description = "value of the secret key for the application"
+}
+
+variable "key_permissions" {
+    type        = list(string)
+    description = "List of key permissions."
+    default     = ["List", "Create", "Delete", "Get", "Purge", "Recover", "Update"]
+}
+
+variable "secret_permissions" {
+    type        = list(string)
+    description = "List of secret permissions."
+    default     = ["List", "Delete", "Get", "Purge", "Recover", "Set"]
+}
+
+variable "certificate_permissions" {
+    type        = list(string)
+    description = "List of certificate permissions."
+    default     = ["Get", "List", "Create", "Delete", "Update", "Purge", "Recover"]
+}
