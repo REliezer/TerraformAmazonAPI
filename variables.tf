@@ -51,16 +51,6 @@ variable "sql_driver" {
     description = "ODBC driver for SQL Server"
 }
 
-variable "acr_username" {
-    type = string
-    description = "Username for Azure Container Registry (ACR)"
-}
-
-variable "acr_password" {
-    type = string
-    description = "value of the secret key for the application"
-}
-
 variable "key_permissions" {
     type        = list(string)
     description = "List of key permissions."

@@ -20,8 +20,8 @@ resource "azurerm_linux_web_app" "webappapi" {
         application_stack {
             docker_registry_url = "https://acramazonproductsdev.azurecr.io"
             docker_image_name = "amazonapi:latest"
-            docker_registry_username = var.acr_username
-            docker_registry_password = var.acr_password
+            docker_registry_username = azurerm_container_registry.acr.name
+            docker_registry_password = azurerm_container_registry.acr.admin_password
         }
     }
 
@@ -34,6 +34,7 @@ resource "azurerm_linux_web_app" "webappapi" {
         SQL_PASSWORD     = var.admin_sql_password
         SQL_SERVER       = "${azurerm_mssql_server.sqlserver.name}.database.windows.net"
         SQL_USERNAME     = azurerm_mssql_server.sqlserver.administrator_login
+        KEY_VAULT_URL    = azurerm_key_vault.keyvault.vault_uri
         WEBSITES_PORT = "80"
     }
 

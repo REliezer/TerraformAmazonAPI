@@ -69,12 +69,7 @@ firebase_api_key = "your-firebase-api-key"
 
 # Secret Key for Token
 secret_key = "your-jwt-secret-key-for-app"
-
-# Container Registry 
-acr_password = "your-acr-password"
-
 ```
-> 💡 **Nota**: Para obtener tu *your-acr-password*, primero debes crear el Azure Container Registery.
 ### 3. Desplegar la infraestructura
 
 ```bash
@@ -137,12 +132,17 @@ Todos los secretos sensibles se almacenan automáticamente en **Azure Key Vault*
 
 | Secret Name | Descripción |
 |-------------|-------------|
-| `database-admin-password` | Contraseña del administrador de SQL Server |
+| `sql-server` | Nombre del servidor SQL Server |
+| `sql-database` | Nombre de la base de datos |
+| `sql-username` | Usuario administrador de SQL Server |
+| `sql-password` | Contraseña del administrador de SQL Server |
 | `firebase-api-key` | API Key de Firebase para autenticación |
 | `jwt-secret-key` | Clave secreta para tokens JWT |
 | `sql-driver` | Driver ODBC para SQL Server |
 | `acr-username` | Usuario del Container Registry |
 | `acr-password` | Contraseña del Container Registry |
+| `applicationinsights-connection-string` | Cadena de conexión para Application Insights |
+| `redis-connection-string` | Cadena de conexión para Redis Cache |
 
 ## ⚙️ Variables de Configuración
 
@@ -155,8 +155,6 @@ Todos los secretos sensibles se almacenan automáticamente en **Azure Key Vault*
 | `firebase_api_key` | string | API Key de Firebase |
 | `secret_key` | string | Clave secreta para JWT |
 | `sql_driver` | string | Driver ODBC |
-| `acr_username` | string | Usuario ACR |
-| `acr_password` | string | Contraseña ACR |
 
 ## 🚀 Despliegue de la Aplicación
 
